@@ -1,0 +1,61 @@
+$ python --version
+Python 3.15.1
+$ python -m unittest -v
+test_la_profondeur_compte_les_portes_du_plus_long_chemin (test_circuits.TestCircuit.test_la_profondeur_compte_les_portes_du_plus_long_chemin)
+NAND(NAND(A,B), NAND(A,C)) : deux portes traversees au pire. ... ok
+test_un_nombre_trop_grand_est_refuse (test_circuits.TestCircuit.test_un_nombre_trop_grand_est_refuse)
+16 ne tient pas sur 4 bits : pas de troncature silencieuse. ... ok
+test_un_signal_inconnu_est_refuse (test_circuits.TestCircuit.test_un_signal_inconnu_est_refuse)
+On ne peut brancher une porte que sur une entree ou une porte deja posee : pas de boucle possible. ... ok
+test_une_entree_ne_peut_pas_s_appeler_comme_une_porte (test_circuits.TestCircuit.test_une_entree_ne_peut_pas_s_appeler_comme_une_porte)
+Noms d'entree interdits : « 0 », « 1 », un doublon, ou un nom avec # (reserve aux portes). ... ok
+test_une_entree_vaut_0_ou_1 (test_circuits.TestCircuit.test_une_entree_vaut_0_ou_1)
+Un 2 tape par erreur leve une erreur au lieu de donner une table absurde. ... ok
+test_une_porte_inconnue_est_refusee (test_circuits.TestCircuit.test_une_porte_inconnue_est_refusee)
+Une faute de frappe dans un type de porte leve une erreur au lieu de fausser le circuit. ... ok
+test_demi_additionneur (test_circuits.TestExercices.test_demi_additionneur)
+Somme = A XOR B, retenue = A ET B. ... ok
+test_exercice_1_nand_nand_donne_a_fois_b_plus_c (test_circuits.TestExercices.test_exercice_1_nand_nand_donne_a_fois_b_plus_c)
+Exercice 1 : NAND(NAND(A,B), NAND(A,C)) = A(B + C) sur les 8 lignes. ... ok
+test_exercice_2_majorite_en_quatre_portes (test_circuits.TestExercices.test_exercice_2_majorite_en_quatre_portes)
+Exercice 2 : AB + AC + BC fait la majorite avec 3 ET et 1 OU. ... ok
+test_exercice_3_xor_avec_quatre_nand (test_circuits.TestExercices.test_exercice_3_xor_avec_quatre_nand)
+Exercice 3 : quatre NAND font un XOR, en trois niveaux. ... ok
+test_exercice_4_additionneur_complet (test_circuits.TestExercices.test_exercice_4_additionneur_complet)
+Exercice 4 : deux demi-additionneurs et un OU, 5 portes, juste sur les 8 lignes. ... ok
+test_exercice_5_additionneur_4_bits_sur_les_256_paires (test_circuits.TestExercices.test_exercice_5_additionneur_4_bits_sur_les_256_paires)
+Exercice 5 : 0101 + 0011 = 1000, et juste (somme, R, V) pour toutes les paires de 4 bits. ... ok
+test_exercice_6_soustraction (test_circuits.TestExercices.test_exercice_6_soustraction)
+Exercice 6 : 0101 - 0011 = 0010, 0011 - 0101 = 1110 (-2), et M=0 additionne toujours. ... ok
+test_la_retenue_traverse_toute_la_chaine (test_circuits.TestExercices.test_la_retenue_traverse_toute_la_chaine)
+Profondeurs citees : S0 2, S3 8, R 9 sur 4 bits ; retenue finale 65 sur 32 bits, 129 sur 64. ... ok
+test_les_deux_retenues_internes_ne_valent_jamais_1_ensemble (test_circuits.TestExercices.test_les_deux_retenues_internes_ne_valent_jamais_1_ensemble)
+Lues dans le circuit : R1 et R2 ne valent jamais 1 sur la meme ligne, donc un OU suffit. ... ok
+test_nand_est_universelle (test_circuits.TestExercices.test_nand_est_universelle)
+NON, ET et OU se construisent avec des NAND seulement (1, 2 et 3 portes). ... ok
+test_un_ou_n_est_pas_un_xor (test_circuits.TestExercices.test_un_ou_n_est_pas_un_xor)
+L'erreur classique : un OU a la place du XOR n'est faux que sur la ligne 1 1. ... ok
+test_decodeur (test_circuits.TestMultiplexeurs.test_decodeur)
+Une seule sortie a 1, celle dont le numero est A1 A0. ... ok
+test_exercice_7_majorite_par_multiplexeur (test_circuits.TestMultiplexeurs.test_exercice_7_majorite_par_multiplexeur)
+Exercice 7 : un MUX 4 vers 1 avec les entrees 0, C, C, 1 fait la majorite. ... ok
+test_mux2 (test_circuits.TestMultiplexeurs.test_mux2)
+S = A si SEL = 0, B si SEL = 1. ... ok
+test_mux4_sur_les_64_lignes (test_circuits.TestMultiplexeurs.test_mux4_sur_les_64_lignes)
+Le multiplexeur 4 vers 1 rend l'entree dont le numero est S1 S0. ... ok
+test_7_plus_3_deborde_sans_retenue (test_circuits.TestPiege.test_7_plus_3_deborde_sans_retenue)
+0111 + 0011 = 1010 : pas de retenue sortante, mais -6 en signe : V = 1. ... ok
+test_le_debordement_est_juste_sur_les_256_paires (test_circuits.TestPiege.test_le_debordement_est_juste_sur_les_256_paires)
+V vaut 1 exactement quand la somme signee sort de [-8, 7] ; R et V different sur 112 paires. ... ok
+test_moins_1_plus_1_retenue_sans_debordement (test_circuits.TestPiege.test_moins_1_plus_1_retenue_sans_debordement)
+1111 + 0001 = 0000 : retenue sortante, mais -1 + 1 = 0 est juste : V = 0. ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.035s
+
+OK
+
+$ python3.11 -m unittest
+Ran 24 tests in 0.045s
+
+OK
